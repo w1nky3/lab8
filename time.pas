@@ -1,9 +1,18 @@
 ﻿begin
+  var flag:= False;
   var year:= ReadInteger('Введите год:');
   if (year mod 100 = 0) and (year mod 400 <> 0) then
-    Print('Год не високосный')
+    Println('Год не високосный')
   else if year mod 4 = 0 then
-    Print('Год високосный')
+  begin
+    Println('Год високосный');
+    flag:= True;
+  end
   else
-    Print('Год не вискокосный')
+    Println('Год не вискокосный');
+  
+  if flag = True then
+    Print('Кол-во дней: 366')
+  else
+   Print('Кол-во дней: 365');
 end.
